@@ -1,15 +1,15 @@
+import { Link } from "react-router-dom";
 import styles from "./Post.module.css";
 import PostList from "./PostList";
 
-const names = ["Stephen", "chinagorom"];
-
-const Post = (props) => {
-	const { author, body } = props;
+const Post = ({ id, author, body }) => {
 	return (
-		<div className={styles.post} onClick={props.show}>
-			<p className={styles.author}> {author}</p>
-			<p className={styles.text}>{body}</p>
-		</div>
+		<li className={styles.post}>
+			<Link to={id}>
+				<p className={styles.author}> {author}</p>
+				<p className={styles.text}>{body}</p>
+			</Link>
+		</li>
 	);
 };
 export default Post;
